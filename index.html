@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Happy Birthday</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="loader">
+                <button id="play">Press me ;D</button>
+            </div>
+        </div>
+    </div>
+
+    <audio class="song" controls loop>
+        <source src="music.mp3">
+        </source>
+        Your browser isn't invited for super fun audio time.
+    </audio>
+
+    <!-- confetti canvas -->
+    <canvas id="confetti"></canvas>
+
+    <!-- floating photos in the background -->
+    <div class="floating-icons">
+        <img src="img/pic1.png"  class="float-icon icon1"  alt="">
+        <img src="img/pic2.JPG"  class="float-icon icon2"  alt="">
+        <img src="img/pic3.png"  class="float-icon icon3"  alt="">
+        <img src="img/pic4.JPG"  class="float-icon icon4"  alt="">
+        <img src="img/pic5.JPG"  class="float-icon icon5"  alt="">
+        <img src="img/pic6.JPG"  class="float-icon icon6"  alt="">
+        <img src="img/pic7.JPG"  class="float-icon icon7"  alt="">
+        <img src="img/pic8.JPG"  class="float-icon icon8"  alt="">
+        <img src="img/pic9.JPG"  class="float-icon icon9"  alt="">
+        <img src="img/pic10.JPG" class="float-icon icon10" alt="">
+        <img src="img/pic11.JPG" class="float-icon icon11" alt="">
+        <img src="img/pic12.JPG" class="float-icon icon12" alt="">
+        <img src="img/pic13.JPG" class="float-icon icon13" alt="">
+        <img src="img/pic14.JPG" class="float-icon icon14" alt="">
+        <img src="img/pic15.JPG" class="float-icon icon15" alt="">
+        <img src="img/pic16.JPG" class="float-icon icon16" alt="">
+        <img src="img/pic17.JPG" class="float-icon icon17" alt="">
+        <img src="img/pic18.JPG" class="float-icon icon18" alt="">
+        <img src="img/pic19.JPG" class="float-icon icon19" alt="">
+        <img src="img/pic20.JPG" class="float-icon icon20" alt="">
+        <img src="img/pic21.jpg" class="float-icon icon21" alt="">
+        <img src="img/pic22.JPG" class="float-icon icon22" alt="">
+        <img src="img/pic23.JPG" class="float-icon icon23" alt="">
+    </div>
+
+    <div class="main">
+        <div class="container pt-5">
+            <div class="row">
+
+                <div class="col-12 col-xl-6 mx-auto">
+                    <img src="img/banner.png" alt="">
+                </div>
+
+                <!-- NAME – always visible, glowing -->
+                <div class="col-12 text-center">
+                    <div id="name" class="area">Mohamed's Day</div>
+                </div>
+
+                <!-- typed birthday messages -->
+                <div class="col-12 text-center">
+                    <div class="type-wrap">
+                        <div id="typed-strings" class="typing">
+                            <h2>Happy Birthday <i id="nae">Mohamed </i></h2>
+                            <h2>I couldn't be there with you in person, so hopefully this is the best way to wish you a happy birthday for now</h2>
+                            <h2>May your year be filled with so much happiness, health &amp; wealth.</h2>
+                            <h2>I love you so much.</h2>
+                            <h2>I miss you so much.</h2>
+                            <h2>Happy 23!!!!!!!!</h2>
+                            <h2>This year will be YOUR year.</h2>
+                            <h2>See you soon!!!!</h2>
+                        </div>
+                        <span id="typed" style="white-space:pre;"></span>
+                    </div>
+                </div>
+
+                <div class="col-12 col-xl-3 cake">
+                    <img src="img/cake.gif" alt="">
+                </div>
+
+                <div class="col-12 final-message">
+                    No matter where I am, you’ll always be home to me 💙
+                </div>
+
+            </div>
+        </div>
+
+        <img src="img/Balloon-Border.png" width="100%" class="balloon-border">
+    </div>
+
+    <script src="https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/typed.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
