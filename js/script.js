@@ -1,8 +1,15 @@
+// =========================
+//  SNOWFLAKES
+// =========================
 var sf = new Snowflakes({
     color: "#ffd700",
     minSize: 20
 });
-var url_string = window.location.href; //window.location.href
+
+// =========================
+//  NAME FROM URL (?name=...)
+// =========================
+var url_string = window.location.href;
 var url = new URL(url_string);
 var c = url.searchParams.get("name");
 console.log(c);
@@ -10,24 +17,51 @@ if (c != null) {
     document.getElementById("name").innerHTML = c;
     document.getElementById("nae").innerHTML = c;
 }
+
+// Hide main content until button is pressed
 $(".main").fadeOut(1);
+
+// =========================
+//  START BUTTON + SECRET CODE
+// =========================
 $('#play').click(function () {
+    const secretCode = "20/11/2025";   // <<< your code
+    const userCode = prompt("Enter the secret code to open your birthday surprise 🎁");
+
+    // If they cancel, do nothing
+    if (userCode === null) return;
+
+    // If wrong code, keep the page locked
+    if (userCode.trim() !== secretCode) {
+        alert("Oops, that's not the code! Try again 🫣");
+        return;
+    }
+
+    // Correct code → start the magic
     $(".loader").fadeOut(1500);
     $(".main").fadeIn("slow");
     sf.destroy();
     $('.balloon-border').animate({
         top: -500
     }, 8000);
+
     var audio = $('.song')[0];
     audio.play();
-
 });
+
+// =========================
+//  TYPED TEXT
+// =========================
 var typed = new Typed("#typed", {
     stringsElement: '#typed-strings',
     typeSpeed: 30,
     backSpeed: 10,
     loop: true
 });
+
+// =========================
+//  CONFETTI ENGINE
+// =========================
 var retina = window.devicePixelRatio,
 
     // Math shorthands
@@ -47,9 +81,6 @@ var retina = window.devicePixelRatio,
 
 // Local WindowAnimationTiming interface polyfill
 (function (w) {
-    /**
-     * Fallback implementation.
-     */
     var prev = _now();
 
     function fallback(fn) {
@@ -60,9 +91,6 @@ var retina = window.devicePixelRatio,
         return req;
     }
 
-    /**
-     * Cancel.
-     */
     var cancel = w.cancelAnimationFrame ||
         w.webkitCancelAnimationFrame ||
         w.clearTimeout;
@@ -215,7 +243,7 @@ document.addEventListener("DOMContentLoaded", function () {
             this.time += _dt;
             this.rotation += this.rotationSpeed * _dt;
             this.cosA = cos(DEG_TO_RAD * this.rotation);
-            this.pos.x += cos(this.time * this.oscillationSpeed) * this.xSpeed * _dt
+            this.pos.x += cos(this.time * this.oscillationSpeed) * this.xSpeed * _dt;
             this.pos.y += this.ySpeed * _dt;
             if (this.pos.y > ConfettiPaper.bounds.y) {
                 this.pos.x = random() * ConfettiPaper.bounds.x;
